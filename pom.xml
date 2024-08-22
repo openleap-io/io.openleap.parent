@@ -480,7 +480,7 @@
         <maven-enforcer-plugin.version>3.5.0</maven-enforcer-plugin.version> <!-- Keep in sync with boot -->
         <maven-failsafe-plugin.version>3.4.0</maven-failsafe-plugin.version>
         <maven-gpg-plugin.version>3.2.5</maven-gpg-plugin.version>
-        <maven-jar-plugin.version>3.3.0</maven-jar-plugin.version> <!-- Keep in sync with boot -->
+        <maven-jar-plugin.version>3.4.2</maven-jar-plugin.version> <!-- Keep in sync with boot -->
         <maven-javadoc-plugin.version>3.8.0</maven-javadoc-plugin.version>
         <maven-project-info-reports-plugin.version>3.6.2</maven-project-info-reports-plugin.version>
         <maven-release-plugin.version>3.1.1</maven-release-plugin.version>
