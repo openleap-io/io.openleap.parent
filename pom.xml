@@ -489,7 +489,7 @@
         <maven-site-plugin.version>4.0.0-M13</maven-site-plugin.version>
         <maven-source-plugin.version>3.3.1</maven-source-plugin.version> <!-- Keep in sync with boot -->
         <maven-surefire-plugin.version>3.1.2</maven-surefire-plugin.version> <!-- Keep in sync with boot -->
-        <maven-surefire-report-plugin.version>3.2.5</maven-surefire-report-plugin.version>
+        <maven-surefire-report-plugin.version>3.4.0</maven-surefire-report-plugin.version>
         <versions-maven-plugin.version>2.17.1</versions-maven-plugin.version> <!-- Keep in sync with boot -->
         <wagon-ftp.version>3.5.3</wagon-ftp.version>
         <wagon-ssh.version>3.5.3</wagon-ssh.version>
