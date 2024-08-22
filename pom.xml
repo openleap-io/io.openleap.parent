@@ -460,7 +460,7 @@
         <logstash-logback-encoder.version>8.0</logstash-logback-encoder.version>
         <logback.version>1.5.7</logback.version> <!-- Keep in sync with boot -->
         <org.mapstruct.version>1.6.0</org.mapstruct.version>
-        <postgresql.version>42.6.2</postgresql.version> <!-- Keep in sync with Boot -->
+        <postgresql.version>42.7.3</postgresql.version> <!-- Keep in sync with Boot -->
         <querydsl.version>5.1.0</querydsl.version>
 
         <spring-boot.version>3.3.2</spring-boot.version>
