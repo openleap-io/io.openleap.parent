@@ -475,7 +475,7 @@
         <aspectj-maven-plugin.version>1.14.0</aspectj-maven-plugin.version>
         <jacoco-maven-plugin.version>0.8.10</jacoco-maven-plugin.version>
         <jib-maven-plugin.version>3.2.1</jib-maven-plugin.version>
-        <git-commit-id-maven-plugin.version>6.0.0</git-commit-id-maven-plugin.version> <!-- Keep in sync with boot -->
+        <git-commit-id-maven-plugin.version>9.0.1</git-commit-id-maven-plugin.version> <!-- Keep in sync with boot -->
         <maven-compiler-plugin.version>3.11.0</maven-compiler-plugin.version> <!-- Keep in sync with boot -->
         <maven-enforcer-plugin.version>3.4.1</maven-enforcer-plugin.version> <!-- Keep in sync with boot -->
         <maven-failsafe-plugin.version>3.1.2</maven-failsafe-plugin.version>
