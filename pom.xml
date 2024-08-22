@@ -455,7 +455,7 @@
         <archunit.version>0.22.0</archunit.version>
         <aspectj.version>1.9.22</aspectj.version> <!-- Keep in sync with boot -->
         <aspectj-tools.version>1.9.22</aspectj-tools.version>
-        <feign.version>13.2.1</feign.version> <!-- Keep in sync with spring-cloud-openfeign-dependencies -->
+        <feign.version>13.3</feign.version> <!-- Keep in sync with spring-cloud-openfeign-dependencies -->
         <jolokia-core.version>1.7.2</jolokia-core.version>
         <logstash-logback-encoder.version>7.4</logstash-logback-encoder.version>
         <logback.version>1.4.14</logback.version> <!-- Keep in sync with boot -->
