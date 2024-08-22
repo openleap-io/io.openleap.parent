@@ -465,7 +465,7 @@
 
         <spring-boot.version>3.3.2</spring-boot.version>
         <spring-data-envers.version>3.3.3</spring-data-envers.version>
-        <spring-framework.version>6.1.6</spring-framework.version> <!-- Keep in sync with boot -->
+        <spring-framework.version>6.1.12</spring-framework.version> <!-- Keep in sync with boot -->
         <spring-plugin-core.version>3.0.0</spring-plugin-core.version>
         <start-class></start-class> <!-- keep it empty, set by actual boot module -->
 
