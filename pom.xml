@@ -463,7 +463,7 @@
         <postgresql.version>42.6.2</postgresql.version> <!-- Keep in sync with Boot -->
         <querydsl.version>5.1.0</querydsl.version>
 
-        <spring-boot.version>3.2.5</spring-boot.version>
+        <spring-boot.version>3.3.2</spring-boot.version>
         <spring-data-envers.version>3.2.5</spring-data-envers.version>
         <spring-framework.version>6.1.6</spring-framework.version> <!-- Keep in sync with boot -->
         <spring-plugin-core.version>3.0.0</spring-plugin-core.version>
