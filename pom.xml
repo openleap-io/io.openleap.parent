@@ -11,7 +11,7 @@
 	</parent>
 	<groupId>io.openleap</groupId>
 	<artifactId>io.openleap.parent</artifactId>
-	<version>45-SNAPSHOT</version>
+	<version>45</version>
 	<packaging>pom</packaging>
 	<name>OpenLeap.io Parent Project</name>
 	<description>OpenLeap.io is an open source microservice plattform</description>
