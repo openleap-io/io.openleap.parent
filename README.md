@@ -12,7 +12,7 @@ This pom is derived from the open source project OpenLeap.
 $ mvn clean deploy -Prelease,gpg
 ```
 
-If there is a sign error such of ioctl device. Check the following:
+If there is a sign error such as "Inappropriate ioctl for device". Check the following:
 1. Check the key(s) installed on the machine:
 ```
 gpg --list-keys --keyid-format short
@@ -21,7 +21,7 @@ gpg --list-keys --keyid-format short
 ```
 export GPG_TTY=$(tty)
 ```
-4. I think this one is optional, because if there is no default key the first key in the list (from 1.) is used. But anyhow: 
+3. I think this one is optional, because if there is no default key the first key in the list (from 1.) is used. But anyhow: 
 Is there a default key set? You can doe this either in th ~/.gnupg/gpg.conf file (just add default-key and the key id)
 
 
