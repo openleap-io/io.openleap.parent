@@ -22,6 +22,6 @@ gpg --list-keys --keyid-format short
 export GPG_TTY=$(tty)
 ```
 3. I think this one is optional, because if there is no default key the first key in the list (from 1.) is used. But anyhow: 
-Is there a default key set? You can doe this either in th ~/.gnupg/gpg.conf file (just add default-key and the key id)
+Is there a default key set? You can do this either in the ~/.gnupg/gpg.conf file (just add default-key and the key id)
 
 
