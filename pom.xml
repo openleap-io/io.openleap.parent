@@ -11,7 +11,7 @@
 	</parent>
 	<groupId>io.openleap</groupId>
 	<artifactId>io.openleap.parent</artifactId>
-	<version>45</version>
+	<version>46</version>
 	<packaging>pom</packaging>
 	<name>OpenLeap.io Parent Project</name>
 	<description>OpenLeap.io is an open source microservice plattform</description>
@@ -68,6 +68,22 @@
 				<role>Deployer</role>
 			</roles>
 		</developer>
+        <developer>
+            <id>scherrer</id>
+            <name>Heiko Scherrer</name>
+            <email>scherrer@openwms.org</email>
+            <url>https://openwms.github.io/</url>
+            <organization>Interface21.io</organization>
+            <organizationUrl>https://www.interface21.io</organizationUrl>
+            <timezone>+2</timezone>
+            <roles>
+                <role>Project Lead</role>
+                <role>Architect</role>
+                <role>Developer</role>
+                <role>Deployer</role>
+            </roles>
+        </developer>
+		
 	</developers>
 
 	<contributors>
@@ -460,6 +476,15 @@
 		<surefireArgs>-Dspring.profiles.active=TEST</surefireArgs>
 
 		<!-- Dependency versions -->
+		<spring-cloud-dependencies.version>2023.0.3</spring-cloud-dependencies.version>
+		<woodstox-core.version>7.0.0</woodstox-core.version>
+        	<guava.version>33.3.0-jre</guava.version>
+        	<jersey-core>1.19.4</jersey-core>
+        	<jersey-client>1.19.1</jersey-client>
+        	<httpclient.version>4.5.14</httpclient.version>
+        	<servo-core.version>0.13.2</servo-core.version>
+        	<hk2-api.version>3.1.1</hk2-api.version>
+        	<spectator-api.version>1.7.3</spectator-api.version>
 		<ameba-lib.version>4.0-SNAPSHOT</ameba-lib.version>
 		<jump-lib.version>1.0.0-SNAPSHOT</jump-lib.version>
 		<apiguardian-api.version>1.1.2</apiguardian-api.version>
