@@ -11,7 +11,7 @@
 	</parent>
 	<groupId>io.openleap</groupId>
 	<artifactId>io.openleap.parent</artifactId>
-	<version>46</version>
+	<version>47</version>
 	<packaging>pom</packaging>
 	<name>OpenLeap.io Parent Project</name>
 	<description>OpenLeap.io is an open source microservice plattform</description>
@@ -1073,7 +1073,7 @@
 				<artifactId>feign-httpclient</artifactId>
 				<version>${feign.version}</version>
 			</dependency>
-			<!-- dependency>
+			<dependency>
 				<groupId>io.interface21</groupId>
 				<artifactId>ameba-lib</artifactId>
 				<version>${ameba-lib.version}</version>
@@ -1082,19 +1082,19 @@
 				<groupId>io.interface21</groupId>
 				<artifactId>ameba-lib</artifactId>
 				<version>${ameba-lib.version}</version>
+				<type>test-jar</type>
+			</dependency>
+			<!-- dependency>
+				<groupId>io.openleap</groupId>
+				<artifactId>jump-lib</artifactId>
+				<version>${jump-lib.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>io.openleap</groupId>
+				<artifactId>jump-lib</artifactId>
+				<version>${jump-lib.version}</version>
 				<type>test-jar</type>
 			</dependency -->
-			<dependency>
-				<groupId>io.openleap</groupId>
-				<artifactId>jump-lib</artifactId>
-				<version>${jump-lib.version}</version>
-			</dependency>
-			<dependency>
-				<groupId>io.openleap</groupId>
-				<artifactId>jump-lib</artifactId>
-				<version>${jump-lib.version}</version>
-				<type>test-jar</type>
-			</dependency>
 			<dependency>
 				<groupId>net.logstash.logback</groupId>
 				<artifactId>logstash-logback-encoder</artifactId>
