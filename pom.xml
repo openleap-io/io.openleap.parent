@@ -11,17 +11,12 @@
 	</parent>
 	<groupId>io.openleap</groupId>
 	<artifactId>io.openleap.parent</artifactId>
-	<version>47</version>
+	<version>48</version>
 	<packaging>pom</packaging>
 	<name>OpenLeap.io Parent Project</name>
 	<description>OpenLeap.io is an open source microservice plattform</description>
-	<url>https://www.openleap.io</url>
+	<url>https://github.com/openleap-io/${project.artifactId}</url>
 	<inceptionYear>2024</inceptionYear>
-
-	<issueManagement>
-		<system>JIRA</system>
-		<url>https://openleap.atlassian.net/browse</url>
-	</issueManagement>
 
 	<licenses>
 		<license>
@@ -32,20 +27,25 @@
 		</license>
 	</licenses>
 
+	<issueManagement>
+		<system>GitHub</system>
+		<url>https://github.com/openleap-io/${project.artifactId}/issues</url>
+	</issueManagement>
+
 	<distributionManagement>
 		<site>
 			<id>site</id>
-			<name>OpenLeap.io WebSite</name>
-			<url>scm:git:git@github.com:openleap-io/io.openleap.git</url>
+			<url>scm:git:git@github.com:openleap-io/${project.artifactId}.git</url>
 		</site>
 	</distributionManagement>
 
 	<scm>
-		<url>https://github.com/openleap-io/io.openleap</url>
-		<connection>scm:git:https://github.com/openleap-io/io.openleap.git</connection>
-		<developerConnection>
-			scm:git:https://github.com:openleap-io/io.openleap.git</developerConnection>
+		<url>https://github.com/openleap-io/${project.artifactId}</url>
+		<connection>scm:git:https://${scmuser}github.com/openleap-io/${project.artifactId}.git</connection>
+		<developerConnection>scm:git:https://${scmuser}github.com/openleap-io/${project.artifactId}.git</developerConnection>
+		<tag>HEAD</tag>
 	</scm>
+
 
 	<organization>
 		<name>OpenLeap.io</name>
@@ -104,12 +104,12 @@
 
 	<ciManagement>
 		<system>GitHub</system>
-		<url>https://github.com/openleap-io/io.openleap/actions</url>
+		<url>https://github.com/openleap-io/${project.artifactId}/actions</url>
 		<notifiers>
 			<notifier>
 				<type>mail</type>
 				<configuration>
-					<address>ci@openleap.io</address>
+					<address>product@openwms.org</address>
 				</configuration>
 			</notifier>
 		</notifiers>
@@ -135,7 +135,7 @@
 					<plugin>
 						<artifactId>maven-failsafe-plugin</artifactId>
 						<configuration>
-							<argLine>@{argLine} @{failsafe.jacoco.args}</argLine>
+							<argLine>@{failsafe.jacoco.args}</argLine>
 							<includes>
 								<include>**/*IT.java</include>
 								<include>**/*Documentation.java</include>
@@ -160,7 +160,7 @@
 					<plugin>
 						<artifactId>maven-surefire-plugin</artifactId>
 						<configuration>
-							<argLine>@{argLine} @{surefire.jacoco.args}</argLine>
+							<argLine>@{surefire.jacoco.args}</argLine>
 							<!-- Never set a forkCount to 0 bc. of Jacoco -->
 							<excludes>
 								<exclude>**/Abstract*.java</exclude>
@@ -353,6 +353,7 @@
 				</pluginManagement>
 				<plugins>
 					<plugin>
+						<groupId>org.apache.maven.plugins</groupId>
 						<artifactId>maven-gpg-plugin</artifactId>
 					</plugin>
 				</plugins>
@@ -478,13 +479,14 @@
 		<!-- Dependency versions -->
 		<spring-cloud-dependencies.version>2023.0.3</spring-cloud-dependencies.version>
 		<woodstox-core.version>7.0.0</woodstox-core.version>
-        	<guava.version>33.3.0-jre</guava.version>
-        	<jersey-core>1.19.4</jersey-core>
-        	<jersey-client>1.19.1</jersey-client>
-        	<httpclient.version>4.5.14</httpclient.version>
-        	<servo-core.version>0.13.2</servo-core.version>
-        	<hk2-api.version>3.1.1</hk2-api.version>
-        	<spectator-api.version>1.7.3</spectator-api.version>
+        <guava.version>33.3.0-jre</guava.version>
+        <jersey-core.version>1.19.4</jersey-core.version>
+        <jersey-client.version>1.19.1</jersey-client.version>
+        <httpclient.version>4.5.14</httpclient.version>
+        <servo-core.version>0.13.2</servo-core.version>
+        <hk2-api.version>3.1.1</hk2-api.version>
+		<spectator-api.version>1.7.3</spectator-api.version>
+		<stax2-api.version>4.2.2</stax2-api.version>
 		<ameba-lib.version>4.0-SNAPSHOT</ameba-lib.version>
 		<jump-lib.version>1.0.0-SNAPSHOT</jump-lib.version>
 		<apiguardian-api.version>1.1.2</apiguardian-api.version>
@@ -500,6 +502,7 @@
 		<postgresql.version>42.7.4</postgresql.version> <!-- Keep in sync with Boot -->
 		<querydsl.version>5.1.0</querydsl.version>
 		<spring-boot.version>3.3.3</spring-boot.version>
+		<spring-boot-admin.version>3.2.3</spring-boot-admin.version>
 		<spring-data-envers.version>3.3.3</spring-data-envers.version>
 		<spring-framework.version>6.1.12</spring-framework.version> <!-- Keep in
 		sync with boot -->
@@ -1012,6 +1015,59 @@
 	<dependencyManagement>
 		<dependencies>
 			<dependency>
+				<!-- Dependency convergence error in com.netflix.eureka:eureka-server -->
+				<groupId>com.fasterxml.woodstox</groupId>
+				<artifactId>woodstox-core</artifactId>
+				<version>${woodstox-core.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>org.glassfish.hk2</groupId>
+				<artifactId>hk2-api</artifactId>
+				<version>${hk2-api.version}</version>
+			</dependency>
+			<dependency>
+				<!-- Dependency convergence error in com.netflix.eureka:eureka-server -->
+				<groupId>org.codehaus.woodstox</groupId>
+				<artifactId>stax2-api</artifactId>
+				<version>${stax2-api.version}</version>
+			</dependency>
+			<dependency>
+				<!-- Dependency convergence error in com.netflix.eureka:eureka-server -->
+				<groupId>com.google.guava</groupId>
+				<artifactId>guava</artifactId>
+				<version>${guava.version}</version>
+			</dependency>
+			<dependency>
+				<!-- Dependency convergence error in com.netflix.eureka:eureka-server -->
+				<groupId>com.netflix.servo</groupId>
+				<artifactId>servo-core</artifactId>
+				<version>${servo-core.version}</version>
+			</dependency>
+			<dependency>
+				<!-- Dependency convergence error in com.netflix.eureka:eureka-server -->
+				<groupId>com.sun.jersey</groupId>
+				<artifactId>jersey-client</artifactId>
+				<version>${jersey-client}</version>
+			</dependency>
+			<dependency>
+				<!-- Dependency convergence error in com.netflix.eureka:eureka-server -->
+				<groupId>com.sun.jersey</groupId>
+				<artifactId>jersey-core</artifactId>
+				<version>${jersey-core}</version>
+			</dependency>
+			<dependency>
+				<!-- Dependency convergence error in com.netflix.eureka:eureka-server -->
+				<groupId>org.apache.httpcomponents</groupId>
+				<artifactId>httpclient</artifactId>
+				<version>${httpclient.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>com.netflix.spectator</groupId>
+				<artifactId>spectator-api</artifactId>
+				<version>${spectator-api.version}</version>
+			</dependency>
+			<!-- End of dependency convergence -->
+			<dependency>
 				<groupId>ch.qos.logback</groupId>
 				<artifactId>logback-access</artifactId>
 				<version>${logback.version}</version>
@@ -1161,6 +1217,13 @@
 				<groupId>org.springframework.plugin</groupId>
 				<artifactId>spring-plugin-metadata</artifactId>
 				<version>${spring-plugin-core.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>org.springframework.cloud</groupId>
+				<artifactId>spring-cloud-dependencies</artifactId>
+				<version>${spring-cloud-dependencies.version}</version>
+				<type>pom</type>
+				<scope>import</scope>
 			</dependency>
 		</dependencies>
 	</dependencyManagement>
